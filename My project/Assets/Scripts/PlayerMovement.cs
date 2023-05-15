@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private float dirX = 0f;
     private bool isGrounded;
-    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float moveSpeed = 14f;
     [SerializeField] private float jumpForce = 14f;
 
     private enum MovementState { idle, running, jumping, falling}

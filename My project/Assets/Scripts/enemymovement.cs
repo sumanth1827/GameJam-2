@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class enemymovement : MonoBehaviour
 {
-    public float moveSpeed = 1f;     // Speed of movement in blocks per second
-    public float maxDistance = 5f;   // Maximum distance to move
+    [SerializeField] private float moveSpeed = 2f;     // Speed of movement in blocks per second
+    [SerializeField] private float maxDistance = 8f;   // Maximum distance to move
 
     private bool movingRight = true; // Direction flag
     private float distanceMoved = 0f; // Distance moved so far
-    
-    // Update is called once per frame
-    void Update()
+    private SpriteRenderer sprite;
+
+    private void Start()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
     {
         float movement = moveSpeed * Time.deltaTime;
 
@@ -34,6 +39,9 @@ public class enemymovement : MonoBehaviour
             // Reverse direction
             movingRight = !movingRight;
             distanceMoved = 0f;
+
+            // Flip the sprite horizontally
+            sprite.flipX = !sprite.flipX;
         }
     }
 }
