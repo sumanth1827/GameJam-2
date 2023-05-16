@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
+            isGrounded = true; 
         }
 
         if (collision.gameObject.CompareTag("Death"))
